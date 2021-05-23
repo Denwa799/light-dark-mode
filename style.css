@@ -48,10 +48,34 @@ h1 {
     margin-bottom: 0;
 }
 
+@media (max-width: 830px) {
+    h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 660px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 300px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+
 h2 {
     color: var(--on-background-alt);
     font-size: 32px;
     font-weight: normal;
+}
+
+@media (max-width: 660px) {
+    h2 {
+        font-size: 22px;
+    }
 }
 
 nav {
@@ -79,12 +103,148 @@ a:focus {
     border-bottom: 3px solid;
 }
 
+@media (max-width: 769px) {
+    .nav {
+        display: none;
+    }
+}
+
+.mobile-navbar {
+    height: 100px;
+    width: 100vw;
+    position: relative;
+    z-index: 15;
+}
+
+@media (min-width: 769px) {
+    .mobile-navbar {
+        display: none;
+    }
+}
+
+.mobile-btn{
+    padding: 5px 0 0 20px;
+    width: 50%;
+}
+
+.menu-icon {
+    z-index: 19;
+    position: relative;
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 769px) {
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.menu-icon-line {
+    position: relative;
+    width: 30px;
+    height: 5px;
+    background-color: var(--on-background);
+}
+
+.menu-icon-line::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: var(--on-background);
+    transition: transform 0.1s ease-in, top 0.1s linear 0.1s;
+}
+
+.menu-icon-line::after {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: var(--on-background);
+    transition: transform 0.1s ease-in, top 0.1s linear 0.1s;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line {
+    background-color: transparent;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line::before {
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.1s linear, transform 0.1s ease-in 0.1s;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line::after {
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.1s linear, transform 0.1s ease-in 0.1s;
+}
+
+.mobile-nav {
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    height: 200px;
+    width: 100vw;
+    background-color: var(--background);
+    padding: 30px;
+    transition: transform 0.3s linear;
+    opacity: 0;
+}
+
+.mobile-nav-active {
+    opacity: 100;
+    background-color: rgb(255 255 255 / 50%);
+    transition: 0.5s;
+}
+
+.mobile-nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav-item {
+    margin-bottom: 30px;
+}
+
+.mobile-nav-link {
+    color: var(--on-background);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    user-select: none;
+    outline: none;
+}
+
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
 .title-group {
     text-align: center;
 }
 
 .about-container {
     display: flex;
+}
+
+.about-h1 {
+    text-align: center;
 }
 
 .image-container {
@@ -102,9 +262,27 @@ img {
     width: 300px;
 }
 
+@media (max-width: 300px) {
+    img {
+        height: 220px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .about-container {
+        display: block;
+    }
+
+    .image-container {
+        margin: 0 0 20px 0;
+    }
+}
+
 .buttons {
     margin-top: 15px;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 button {
@@ -112,10 +290,10 @@ button {
     height: 40px;
     cursor: pointer;
     border-radius: 10px;
-    margin-right: 10px;
     border: 2px solid var(--primary-color);
     font-size: 15px;
     outline: none;
+    margin: 10px;
 }
 
 button:disabled {
@@ -190,6 +368,12 @@ p {
     font-size: 1rem;
 }
 
+@media (max-width: 350px) {
+    .toggle-text {
+        display: none;
+    }
+}
+
 .toggle-icon {
     padding-right: 20px;
 }
@@ -260,7 +444,29 @@ input:checked + .slider::before {
     margin-right: 5px;
 }
 
+.social-icons {
+    text-align: center;
+}
+
 .social-icon {
     font-size: 100px;
-    margin-right: 50px;
+    padding: 25px;
+}
+
+@media (max-width: 830px) {
+    .social-icon {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 660px) {
+    .social-icon {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 300px) {
+    .social-icon {
+        font-size: 50px;
+    }
 }
