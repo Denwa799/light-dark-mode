@@ -110,8 +110,6 @@ a:focus {
 }
 
 .mobile-navbar {
-    height: 100px;
-    width: 100vw;
     position: relative;
     z-index: 15;
 }
@@ -191,23 +189,21 @@ a:focus {
 
 .mobile-nav {
     z-index: 9;
-    display: flex;
+    display: none;
     justify-content: center;
     position: fixed;
     right: 0;
-    top: 150px;
+    top: 85px;
     height: 200px;
     width: 100vw;
     background-color: var(--background);
     padding: 30px;
     transition: transform 0.3s linear;
-    opacity: 0;
 }
 
 .mobile-nav-active {
-    opacity: 100;
+    display: flex;
     background-color: rgb(255 255 255 / 50%);
-    transition: 0.5s;
 }
 
 .mobile-nav-list {
@@ -224,7 +220,7 @@ a:focus {
     color: var(--on-background);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 24px;
     user-select: none;
     outline: none;
 }
@@ -232,6 +228,12 @@ a:focus {
 @media (min-width: 769px) {
     .mobile-nav {
         display: none;
+    }
+}
+
+@media (max-width: 660px) {
+    .mobile-nav-link {
+        font-size: 18px;
     }
 }
 
